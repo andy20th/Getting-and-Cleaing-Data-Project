@@ -51,4 +51,5 @@ Section #4. Appropriately labels the data set with descriptive variable names.
 - Transform data using dplyr package (contained in tidyverse)
 - used group_by command to group by subjects and activity (although data should already be in that order
 - Calculate means with summarize command: select columns to be summarized with summarize_at command and calculate the mean of each column
-- save tidy data set as "tidydata.txt"
+- The tidy dataset contains the average of each variable for each activity and each subject 30subjects x 6 activities = 180 rows
+- Save tidy data set as "tidydata.txt"
