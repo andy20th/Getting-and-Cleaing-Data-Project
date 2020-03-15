@@ -9,10 +9,10 @@ II. Code
 The code consists of a number of different sections:
 - Section A: #download and unzip Data
 - Section B: #load files
-- Section #1. join data: Merges the training and the test sets to create one data set.
+- Section #1. join data: Merges the training and the test sets to create one data set
 - Section #2. Extracts only the measurements on the mean and standard deviation for each measurement
 - Section #3. Uses descriptive activity names to name the activities in the data set
-- Section #4. Appropriately labels the data set with descriptive variable names.
+- Section #4. Appropriately labels the data set with descriptive variable names
 -Section #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
 Section A: #download and unzip Data
@@ -33,4 +33,22 @@ Section #1. join data: Merges the training and the test sets to create one data 
 
 Section #2. Extracts only the measurements on the mean and standard deviation for each measurement
 - reads feature variables using read.table
-- selects variables that contains "mean" or 
+- selects variables that contains "mean" or "std" with grep
+- edits the variable names to remove parentesis
+
+Section #3. Uses descriptive activity names to name the activities in the data set
+- load the file activity_labels.txt with read.table command
+- edit the variables (lower case and remove "_"
+- create activity label that replaces activity-numbers with activity names 
+- name column "activity
+
+Section #4. Appropriately labels the data set with descriptive variable names.
+- finish labeling of data: Label the subject column
+- Create one dataset by binding variables column wise
+- Optional: write complete dataset to "alldata.txt"
+
+#5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+- Transform data using dplyr package (contained in tidyverse)
+- used group_by command to group by subjects and activity (although data should already be in that order
+- Calculate means with summarize command: select columns to be summarized with summarize_at command and calculate the mean of each column
+- save tidy data set as "tidydata.txt"
